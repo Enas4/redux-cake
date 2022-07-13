@@ -1,7 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-// import { createAsyncThunk } from "@reduxjs/toolkit";
-// import cakeSlice from "../cakes/cakeSlice";
 
 const initialState = {
   loading: false,
@@ -11,8 +9,8 @@ const initialState = {
 
 export const fetchUsers = createAsyncThunk("user/fetchUsers", () => {
   return axios
-    .get("https://jsonplaceholder.typicode.com/users")
-    .then((response) => response.data.map((users) => users.id));
+    .get("https://jsonplaceholder.typicode.com/usersw")
+    .then((response) => response.data);
 });
 
 const userSlice = createSlice({
